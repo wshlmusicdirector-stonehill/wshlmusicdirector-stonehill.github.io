@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", async function() {
 
   document.getElementById("searchButton").onclick = () => searchMusic(1);
   document.getElementById("clearButton").onclick = clearSearch;
+  document.getElementById("storage").addEventListener("change", () => {
+  searchMusic(1);
+});
 
   document.getElementById("previousButton").onclick = () => changePage(-1);
   document.getElementById("nextButton").onclick = () => changePage(1);
