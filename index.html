@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Music Library</title>
+
+  <link rel="icon" href="https://i.postimg.cc/59QCYBMb/WSHL913logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-brand">
+    <img
+      src="images/WSHL913AceLogo.png"
+      alt="Music Library Logo"
+      class="site-logo"
+    >
+
+    <div>
+      <h1>♫ Music Library</h1>
+      <p>Search and explore the music collection</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="search-panel">
+
+    <h2>Find Music</h2>
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search songs"
+    >
+
+    <div class="filter-grid">
+
+      <input type="text" id="artistFilter" placeholder="Filter by artist">
+
+      <input type="text" id="albumFilter" placeholder="Filter by album">
+
+      <input type="text" id="genreFilter" placeholder="Filter by genre">
+
+      <input type="text" id="yearFilter" placeholder="Filter by year">
+
+    </div>
+
+    <div class="storage-filter">
+      <label for="storage">Storage Location</label>
+
+      <select id="storage">
+        <option value="">All Locations</option>
+        <option value="Hard Drive">Hard Drive</option>
+        <option value="CD">CD</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button id="searchButton">Search</button>
+      <button id="clearButton" class="clear-button">Clear</button>
+    </div>
+
+  </section>
+
+  <div class="results-header">
+    <h2>Search Results</h2>
+    <span id="resultCount">0 records</span>
+  </div>
+
+  <div class="table-container">
+
+    <table>
+      <thead>
+        <tr>
+          <th><button class="sort-button" data-sort="title">Title <span id="sort-title">↕</span></button></th>
+          <th><button class="sort-button" data-sort="artist">Artist <span id="sort-artist">↕</span></button></th>
+          <th><button class="sort-button" data-sort="album">Album <span id="sort-album">↕</span></button></th>
+          <th><button class="sort-button" data-sort="genre">Genre <span id="sort-genre">↕</span></button></th>
+          <th><button class="sort-button" data-sort="year">Year <span id="sort-year">↕</span></button></th>
+          <th><button class="sort-button" data-sort="length">Length <span id="sort-length">↕</span></button></th>
+          <th>Media</th>
+        </tr>
+      </thead>
+
+      <tbody id="resultsBody"></tbody>
+    </table>
+
+  </div>
+
+  <p id="status">Loading music library...</p>
+
+  <div class="pagination">
+
+    <button id="previousButton" disabled>Previous</button>
+
+    <div class="page-jump">
+      <span>Page</span>
+
+      <input type="number" id="pageInput" min="1" value="1">
+
+      <span>of</span>
+      <span id="totalPages">1</span>
+
+      <button id="goButton">Go</button>
+    </div>
+
+    <button id="nextButton" disabled>Next</button>
+
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

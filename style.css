@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #201840;
+  color: #e2e8f0;
+}
+
+.site-header {
+  background: #201840;
+  border-bottom: 1px solid #334155;
+  padding: 22px 30px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.site-logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.header-brand h1 {
+  margin: 0;
+  color: white;
+  font-size: 28px;
+}
+
+.header-brand p {
+  color: #94a3b8;
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.search-panel {
+  background: #2A1D57;
+  padding: 25px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.search-panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: white;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #475569;
+  border-radius: 7px;
+  background: #241C40;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #452F8F;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.filter-grid input {
+  margin-bottom: 0;
+}
+
+.storage-filter {
+  margin-top: 15px;
+}
+
+.storage-filter label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #6043CC;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4C3694;
+}
+
+button:disabled {
+  background: #475569;
+  cursor: not-allowed;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.clear-button {
+  background: #475569;
+}
+
+.clear-button:hover {
+  background: #64748b;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 14px;
+}
+
+.results-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 21px;
+}
+
+#resultCount {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: #2A253F;
+  border: 1px solid #334155;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 900px;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 25%; }
+th:nth-child(2), td:nth-child(2) { width: 20%; }
+th:nth-child(3), td:nth-child(3) { width: 25%; }
+th:nth-child(4), td:nth-child(4) { width: 10%; }
+th:nth-child(5), td:nth-child(5) { width: 8%; }
+th:nth-child(6), td:nth-child(6) { width: 10%; }
+th:nth-child(7), td:nth-child(7) { width: 8%; }
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+th {
+  background: #2A1C58;
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+td {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+tr:hover td {
+  background: #4C3694;
+}
+
+.sort-button {
+  background: transparent;
+  color: white;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.sort-button:hover {
+  background: #452F8F;
+}
+
+.sort-button span {
+  margin-left: 5px;
+  color: white;
+}
+
+#status {
+  margin-top: 15px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.page-jump {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+#pageInput {
+  width: 65px;
+  margin: 0;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.page-jump button {
+  padding: 8px 12px;
+}
+
+.play-button {
+  background-color: #2A1C58;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+.play-button:hover {
+  background-color: #6043CC;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 20px 15px;
+  }
+
+  .header-brand h1 {
+    font-size: 23px;
+  }
+
+  main {
+    margin: 18px auto;
+    padding: 0 12px;
+  }
+
+  .search-panel {
+    padding: 18px;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group button {
+    flex: 1;
+  }
+
+  .results-header h2 {
+    font-size: 19px;
+  }
+
+  th, td {
+    padding: 11px;
+  }
+}
