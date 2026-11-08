@@ -409,6 +409,11 @@ function changePage(direction) {
 
     searchMusic(currentPage);
 
+    document.querySelector(".results-header").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
   }
 
 }
@@ -421,11 +426,8 @@ function jumpToPage() {
   let page = parseInt(input.value, 10);
 
   if (isNaN(page)) {
-
     input.value = currentPage;
-
     return;
-
   }
 
   page = Math.max(1, Math.min(page, totalPages));
@@ -433,6 +435,11 @@ function jumpToPage() {
   currentPage = page;
 
   searchMusic(page);
+
+  document.querySelector(".results-header").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 
 }
 
