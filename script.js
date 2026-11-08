@@ -13,9 +13,6 @@ const SHEETS = {
 
 const PAGE_SIZE = 25;
 
-const CACHE_KEY = "musicLibraryInventory";
-const CACHE_DURATION = 5 * 60 * 1000;
-
 
 // ==========================================
 // GLOBAL VARIABLES
@@ -161,26 +158,6 @@ async function loadInventory() {
     document.getElementById("status").textContent =
       "Loading music library...";
 
-    // Check browser cache
-    const cached = localStorage.getItem(CACHE_KEY);
-
-    if (cached) {
-
-      const parsed = JSON.parse(cached);
-
-      if (Date.now() - parsed.timestamp < CACHE_DURATION) {
-
-        inventory = parsed.records;
-
-        document.getElementById("status").textContent =
-          "Music library loaded from cache.";
-
-        return;
-
-      }
-
-    }
-
     // Retrieve both inventories
     const [hardDriveRows, cdRows] = await Promise.all([
 
@@ -206,17 +183,11 @@ async function loadInventory() {
       })
     );
 
-    // Save browser cache
-    localStorage.setItem(CACHE_KEY, JSON.stringify({
-
-      timestamp: Date.now(),
-
-      records: inventory
-
-    }));
-
     document.getElementById("status").textContent =
       "Music library loaded successfully.";
+
+    // Display the initial results
+    searchMusic(1);
 
   } catch (error) {
 
