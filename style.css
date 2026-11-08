@@ -22,13 +22,13 @@ body {
 }
 
 .site-logo {
-  width: 65px;
-  height: 65px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
 .header-brand h1 {
-  margin: 0;
+  margin: 0 0 0 4px;
   color: white;
   font-size: 28px;
 }
@@ -175,7 +175,7 @@ th:nth-child(6), td:nth-child(6) { width: 10%; }
 th:nth-child(7), td:nth-child(7) { width: 8%; }
 
 th, td {
-  padding: 14px;
+  padding: 14px 10px;
   text-align: left;
   border-bottom: 1px solid #334155;
 }
@@ -315,4 +315,29 @@ table th:nth-child(7),
 table td:nth-child(7) {
   text-align: center !important;
   vertical-align: middle !important;
+}
+
+/* Make Genre, Year, and Length buttons fit their contents */
+th:nth-child(4) .sort-button,
+th:nth-child(5) .sort-button,
+th:nth-child(6) .sort-button {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+
+/* Center the buttons inside their headings */
+th:nth-child(4),
+th:nth-child(5),
+th:nth-child(6) {
+  text-align: center;
+}
+
+/* Shift Title, Artist, and Album headings left */
+th:nth-child(1),
+th:nth-child(2),
+th:nth-child(3) {
+  padding-left: 4px;
 }
